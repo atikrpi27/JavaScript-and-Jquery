@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- External Style File -->
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+
+        <script>
+            //Input from user
+            var first_name = prompt("Enter Your First name:");
+            var last_name = prompt("Enter Your Last name:");
+
+            document.write("Your First name is = " + first_name);
+            document.write(" and Your Last name is = " + last_name);
+            document.write("<br>" + "Your Full name is = " + first_name + " " + last_name + "<br>");
+
+            //convert into uppercase
+            var full_name = "atikur rahman";
+            document.write("Your Entered name is = " + full_name + "<br>");
+            document.write("Your name uppercase form is = " + full_name.toUpperCase() + "<br>");
+
+
+            //Number of length
+            var name = "Atikur Rahman";
+            document.write("My full name length is = " + name.length);
+
+            var x = prompt("Enter your text:");
+            document.write("<br>" + "your entered text length is = " + x.length);
+
+            //position of word
+            document.write("<br>" + "The 5th position word of my full name is = " + full_name.charAt(5) + "<br>");
+        </script>
+
+
+
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- External JS file -->
+</body>
+
+</html>
