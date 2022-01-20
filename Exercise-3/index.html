@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript-3</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+
+    <script>
+        //Arithmetic Operator-> +, -, *, /, % (Modulus), ** (Exponent)
+        var num1 = parseFloat(prompt("Enter your Number 1: "));
+        var num2 = parseFloat(prompt("Enter your Number 2: "));
+
+        add = num1 + num2;
+        sub = num1 - num2;
+        mul = num1 * num2;
+        div = num1 / num2;
+        mod = num1 % num2;
+        exp = num1 ** num2;
+
+        document.write(num1 + " + " + num2 + " = " + add + "<br>");
+        document.write(num1 + " - " + num2 + " = " + sub + "<br>");
+        document.write(num1 + " * " + num2 + " = " + mul + "<br>");
+        document.write(num1 + " / " + num2 + " = " + div + "<br>");
+        document.write(num1 + " % " + num2 + " = " + mod + "<br>");
+        document.write(num1 + " ** " + num2 + " = " + exp + "<br>");
+
+        //Increment Decrement -> ++, --
+        document.write("Number 1 is = " + num1 + "<br>");
+        num1 = ++num1;
+        document.write("After Pre-Increment Number 1 is = " + num1 + "<br>");
+        num1 = num1++;
+        document.write("After Post-Increment Number 1 is = " + num1 + "<br>");
+        document.write("Number 2 is = " + num2 + "<br>");
+        num2 = --num2;
+        document.write("After Pre-Decrement Number 2 is = " + num2 + "<br>");
+        num2 = num2--;
+        document.write("After Post-Increment Number 2 is = " + num2 + "<br>");
+
+        //Assign Operator -> =, ==, +=, -=, *=, /=, %=, **=,
+        var num3 = 25;
+        document.write("Number 1 is = " + num1 + "<br>");
+        document.write("Number 2 is = " + num2 + "<br>");
+        document.write("Number 3 is = " + num3 + "<br>");
+        document.write("Number2 replace by number3 is = ");
+        document.write(parseInt(num2 = num3 + "<br>"));
+        document.write("<br>" + "Number2 and number1 is equal= ");
+        document.write(num2 == num1 + "<br>");
+
+        //calculator
+        num1 = 2;
+        num2 = 1;
+        var res1, res2, res3, res4;
+        document.write("<br>" + "Number 1 is = " + num1 + "<br>");
+        document.write("Number 2 is = " + num2 + "<br>");
+        document.write("Number 3 is = " + num3 + "<br>");
+        res1 = num1 += 2;
+        res2 = num2 -= 2;
+        res3 = num3 *= 2;
+        res4 = num1 /= 2;
+        document.write("Number1 +=2 , Now value of num1 is = " + res1 + "<br>");
+        document.write("Number2 -=2 , Now value of num1 is = " + res2 + "<br>");
+        document.write("Number3 *=2 , Now value of num1 is = " + res3 + "<br>");
+        document.write("Number1 /=2 , Now value of num1 is = " + res4 + "<br>");
+    </script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
