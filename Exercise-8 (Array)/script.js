@@ -24,6 +24,27 @@ document.write("Length of New Array using pop function: " + Array.length + "<br>
 document.write("No of 6th value of Array: " + Array[5] + "<br>" + "<br>");
 
 
+//Array shift (oposite of pop)
+document.write("Values of Array: " + Array + "<br>");
+Array.shift();
+document.write("Values of Array after using Shift function: " + Array + "<br>" + "<br>");
+
+
+//Array unshift (oposite of push)
+
+var number = [11,12,13]
+document.write("Values of Array: " + number + "<br>");
+number.unshift("10");
+document.write("Values of Array after using unshift function: " + number + "<br>" + "<br>");
+
+
+//Array splice
+
+number.splice(1,0,"Atik",10.5,"Noyon");
+document.write("Adding Values in position of 2 of Array using Splice function: " + number + "<br>");
+number.splice(2,1);
+document.write("Removing Values in position of 2 of Array using Splice function: " + number + "<br>" + "<br>");
+
 //Array Concatenation
 
 var country1 = ["Bangladesh" , "India", "Pakistan"];
@@ -53,4 +74,14 @@ for(i=0; i<lengths; i++){
     
 }
 //sum of Array
-document.write("Sum of Array's values: " + sum)
+document.write("Sum of Array's values: " + sum + "<br>")
+
+
+//Array sortting and reversing
+
+var bag = ['a','d','b','c','e']
+document.write("Values of Array: " + bag + "<br>");
+bag.sort();
+document.write("Values of Array after sort: " + bag + "<br>");
+bag.reverse();
+document.write("Values of Array after reverse: " + bag + "<br>");
