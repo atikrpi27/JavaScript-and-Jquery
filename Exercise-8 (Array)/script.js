@@ -84,4 +84,23 @@ document.write("Values of Array: " + bag + "<br>");
 bag.sort();
 document.write("Values of Array after sort: " + bag + "<br>");
 bag.reverse();
-document.write("Values of Array after reverse: " + bag + "<br>");
+document.write("Values of Array after reverse: " + bag + "<br>" + "<br>");
+
+//Identify the heighest Score Program
+
+document.write("Heighest Score Program:" + "<br>");
+var score = [10,23,45,64,28,33,44]
+document.write("All Scores are: " + score + "<br>")
+
+function highestScore(score){
+    var max = score[0];
+    for(x = 1; x < score.length; x++){
+        if(max < score[x]){
+            max = score[x];
+        }
+    }
+    return max;
+}
+
+var maxScore = highestScore(score);
+document.write("Highest score is: " + maxScore + "<br>" + "<br>")
