@@ -28,10 +28,22 @@ function Student(name,age,cgpa,language){
     this.age = age;
     this.cgpa = cgpa;
     this.language = language;
+
+    //function Constructor
+    this.display = function(){
+        document.write("Student Details using Constructor display method: " + this.name + ", " + this.age  + ", " + this.cgpa  + ", " + this.language  + "<br>"  + " <br> ");
+    }
 }
+
+
+
 var student1 = new Student("Atik", 24, 3.89,  ['Bangla','English']);
 var student2 = new Student("Atiksdf", 244, 3.49,  ['Bangla','English']);
+var student3 = new Student("Atik", 44, 3.69,  ['Bangla','English']);
 document.write("Student1 Details using Constructor: " + student1.name + ", " + student1.age  + ", " + student1.cgpa  + ", " + student1.language  + "<br>");
 
 document.write("Student2 Details using Constructor: " + student2.name + ", " + student2.age  + ", " + student2.cgpa  + ", " + student2.language  + "<br>"  + " <br> ");
 
+//function Constructor display method
+
+student3.display()
