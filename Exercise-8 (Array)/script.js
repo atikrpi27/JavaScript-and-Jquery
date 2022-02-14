@@ -104,3 +104,29 @@ function highestScore(score){
 
 var maxScore = highestScore(score);
 document.write("Highest score is: " + maxScore + "<br>" + "<br>")
+
+
+//Identify the heighest Score Program (2D Array)
+
+document.write("Heighest Score Program 2D Array:" + "<br>");
+function heighestRunScorer(playersInfo){
+    var heighestScorer = playersInfo [0] [0];
+    var heighestScorer = playersInfo [0] [1];
+
+    for(var x = 1; x < playersInfo.length; x++){
+        if(heighestScorer < playersInfo[x] [1]){
+             heighestScorer = playersInfo[x] [1];
+             heighestScorer = playersInfo[x] [0];
+        }
+    }
+    return heighestScorer;
+}
+
+var playersInfo = [
+    ["Atik",24],
+    ["Atik1",22],
+    ["Atik3",23]
+];
+
+var name = heighestRunScorer(playersInfo);
+document.write(name);
