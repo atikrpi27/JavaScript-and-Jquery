@@ -12,3 +12,12 @@ function button3(){
     var txt = document.querySelector("#pid");
     txt.innerHTML = ("You are clicked on Button 3.")
 }
+
+var pic = document.querySelector("#mypic");
+function aimg(){
+    pic.src = "atik.jpg";
+}
+
+function nimg(){
+    pic.src = "Shamim.jpg";
+}
