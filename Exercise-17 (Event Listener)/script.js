@@ -32,3 +32,12 @@ p2.addEventListener("mouseout", out);
 function out(){
     p2.classList.remove("h2");
 }
+
+//Multiple Event Listener
+var txtLen = document.querySelectorAll(".myBtn").length
+for (i=0; i<txtLen; i++){
+document.querySelectorAll(".myBtn")[i].addEventListener("click", function(){
+    var txt = this.innerHTML;
+    document.querySelector("h1").innerHTML = (txt + "is Clicked.");
+})
+}
