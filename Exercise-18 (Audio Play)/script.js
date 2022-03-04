@@ -5,6 +5,7 @@ var txtLen = document.querySelectorAll(".myBtn").length
 for (i=0; i<txtLen; i++){
 document.querySelectorAll(".myBtn")[i].addEventListener("click", function(){
     var txt = this.innerHTML;
+    document.querySelector(".heading").innerHTML = (txt + "Button is clicked and play this button sound.");
     audioPlay(txt);
 })
 }
