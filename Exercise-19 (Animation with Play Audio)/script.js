@@ -9,7 +9,10 @@ document.querySelectorAll(".myBtn")[i].addEventListener("click", function(){
     audioPlay(txt);
     animation(txt);
 })
-}
+};
+
+
+//audio
 
 function audioPlay(txt){
     switch(txt){
@@ -26,7 +29,9 @@ function audioPlay(txt){
             audio.play();
             break;
     }
-}
+};
+
+//animation
 
 function animation(txt){
    var animation = document.querySelector("."+ txt);
@@ -35,4 +40,12 @@ function animation(txt){
    setTimeout(function(){
         animation.classList.remove("animation"); 
    },1000);
-}
+};
+
+//animation and sound by keypress listener
+
+document.addEventListener("keypress", function(event){
+    var txt = event.key;
+    animation(txt);
+    audioPlay(txt);
+});
