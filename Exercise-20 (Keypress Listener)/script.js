@@ -9,5 +9,6 @@ count = 0;
 document.querySelector("textarea").addEventListener("keypress", function(event){
     var txt = event.key;
     count++;
-    document.querySelector("h6").innerHTML = ("You have pressed " + count +" charecters.");
+    document.querySelector("h6").innerHTML = ("You have pressed " + count + " charecters.");
+    
 });
