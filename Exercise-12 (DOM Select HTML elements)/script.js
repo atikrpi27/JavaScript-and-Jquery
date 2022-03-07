@@ -9,3 +9,4 @@ var qSelect = document.querySelector("#pid").innerHTML = ("hikfmd");
 var qSelect1 = document.querySelector(".pclass").innerHTML = ("hi I am Atik.");
 var qSelect2 = document.querySelector("#prompt").innerHTML = prompt("Write your words: ");
 
+document.querySelector(".span").innerHTML = ("hi I am Atik change in span Section.");
