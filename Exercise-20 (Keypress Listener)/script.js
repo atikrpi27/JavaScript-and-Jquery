@@ -12,3 +12,8 @@ document.querySelector("textarea").addEventListener("keypress", function(event){
     document.querySelector("h6").innerHTML = ("You have pressed " + count + " charecters.");
     
 });
+
+document.addEventListener("keypress", function(event){
+    var txt = event.key;
+    document.querySelector("#result").innerHTML = ("Your Last word is: " + txt);
+});
