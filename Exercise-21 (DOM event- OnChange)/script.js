@@ -14,3 +14,18 @@ function changeHanderel(event){
     document.write(event.target.value+"<br>");
     console.log(event.target.value);
 };
+
+
+const program = document.querySelectorAll("input[name=programming]");
+// console.log(program);
+
+Array.from(program).map((program) => {
+    program.addEventListener("change", programHandeler);
+});
+
+function programHandeler(e){
+    if(e.target.checked){
+        console.log(e.target.value);
+        // document.write(e.target.value);
+    };
+};
