@@ -29,3 +29,12 @@ function programHandeler(e){
         // document.write(e.target.value);
     };
 };
+
+
+const department = document.querySelector("#department");
+department.addEventListener("change", departmentHandeler);
+
+function departmentHandeler(e){
+    console.log(e.target.value);
+     // document.write(e.target.value);
+}
