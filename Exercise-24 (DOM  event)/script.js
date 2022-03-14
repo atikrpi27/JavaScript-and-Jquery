@@ -11,3 +11,10 @@ window.addEventListener("unload", function (){
     console.log("Unload");
 });
 
+//scroll event
+
+window.addEventListener("scroll", function (){
+    console.log("scrolled");
+});
+
+
