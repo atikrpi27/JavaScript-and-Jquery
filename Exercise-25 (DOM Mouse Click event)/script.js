@@ -7,3 +7,11 @@ div.addEventListener("click", function(){
 div.addEventListener("dblclick", function(){
     console.log("Dobule Click Event is occured.");
 });
+
+div.addEventListener("mouseup", function(){
+    console.log("Mouseup Event is occured.");
+});
+
+div.addEventListener("mousedown", function(){
+    console.log("Mousedown Event is occured.");
+});
