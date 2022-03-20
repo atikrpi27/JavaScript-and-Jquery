@@ -15,3 +15,11 @@ div.addEventListener("mouseup", function(){
 div.addEventListener("mousedown", function(){
     console.log("Mousedown Event is occured.");
 });
+
+div.addEventListener("mouseenter", function(){
+    console.log("Mouse Enter Event is occured.");
+});
+
+div.addEventListener("mouseleave", function(){
+    console.log("Mouse leave Event is occured.");
+});
