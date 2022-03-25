@@ -4,3 +4,10 @@ div{
     width: 250px;
     color: aliceblue;
 }
+
+.btn{
+    width: 80px;
+    height: 35px;
+    background: white;
+    color: black;
+}

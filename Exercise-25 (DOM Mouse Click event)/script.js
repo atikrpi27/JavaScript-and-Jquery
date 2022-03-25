@@ -23,3 +23,14 @@ div.addEventListener("mouseenter", function(){
 div.addEventListener("mouseleave", function(){
     console.log("Mouse leave Event is occured.");
 });
+
+
+//mapping function
+
+const button = document.querySelectorAll(".btn");
+
+Array.from(button).map((buttons) => {
+    buttons.addEventListener("click", function(e){
+        console.log(e.target.innerText);
+    });
+});
