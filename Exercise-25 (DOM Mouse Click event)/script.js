@@ -34,3 +34,20 @@ Array.from(button).map((buttons) => {
         console.log(e.target.innerText);
     });
 });
+
+
+//key event
+
+var text = document.querySelector("textarea");
+
+text.addEventListener("keydown", function(){
+    console.log("Key is down");
+});
+
+text.addEventListener("keyup", function(){
+    console.log("Key is uped");
+});
+
+text.addEventListener("keypress", function(){
+    console.log("Key is pressed");
+});
