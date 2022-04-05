@@ -69,3 +69,10 @@ text.addEventListener("keypress", function(e){
         console.log("Shift + " + e.key);
     }
 });
+
+
+text.addEventListener("keydown", function(e){
+    if(e.repeat){
+        console.log("Same Key doesn't repeat");
+    }
+});
