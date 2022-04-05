@@ -51,3 +51,21 @@ text.addEventListener("keyup", function(){
 text.addEventListener("keypress", function(){
     console.log("Key is pressed");
 });
+
+text.addEventListener("keypress", function(e){
+    console.log(e.key);
+});
+
+text.addEventListener("keypress", function(e){
+    console.log(e.keyCode);
+});
+
+text.addEventListener("keypress", function(e){
+    console.log(e.Code);
+});
+
+text.addEventListener("keypress", function(e){
+    if(e.shiftKey){
+        console.log("Shift + " + e.key);
+    }
+});
