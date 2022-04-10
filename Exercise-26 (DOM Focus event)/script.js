@@ -7,3 +7,11 @@ Inputfocus.addEventListener("blur", function(){
 Inputfocus.addEventListener("focus", function(){
     console.log("Focus Event is occured.");
 });
+
+Inputfocus.addEventListener("focusin", function(){
+    console.log("FocusIn Event is occured.");
+});
+
+Inputfocus.addEventListener("focusout", function(){
+    console.log("FocusOut Event is occured.");
+});
