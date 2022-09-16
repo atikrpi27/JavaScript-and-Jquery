@@ -34,7 +34,7 @@
     font-size: 13px;
 }
 
-#todoBbtn{
+#todoBtn{
     background: none;
     border: 1px solid #ff717187;
     border-radius: 4px;
@@ -44,7 +44,13 @@
     margin-left: 5px;
 }
 
-#todoBbtn:hover{
+#todoBtn:hover{
     color: #e91e63 !important;
     border: 1px solid #e91e63 !important;
 }
+
+/* .action{
+    display: flex;
+    flex-direction: row;
+    flex- s;
+} */
