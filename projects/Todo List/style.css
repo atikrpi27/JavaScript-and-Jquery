@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background: bisque !important;
+    height: 100vh !important;
+    width: 680px;
+    text-align: center;
+}
+
+.card-title{
+    box-shadow: 0 2px 15px -5px #333;
+    padding-bottom: 10px;
+}
+
+.form{
+    margin-top: 15px;
+}
+
+#todoInput{
+    width: 70%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 13px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+}
+
+#todoInput::placeholder{
+    font-size: 13px;
+}
+
+#todoBbtn{
+    background: none;
+    border: 1px solid #ff717187;
+    border-radius: 4px;
+    height: 28px;
+    font-size: 13px;
+    color: #ff7171ba;
+    margin-left: 5px;
+}
+
+#todoBbtn:hover{
+    color: #e91e63 !important;
+    border: 1px solid #e91e63 !important;
+}

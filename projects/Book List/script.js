@@ -29,7 +29,7 @@ btn.addEventListener('click', function(e){
         bookList.appendChild(newRow) //append all table row with the main table
     }
 
-        document.getElementById('myForm').reset();
+        document.getElementById('myForm').reset(); //after submit clear all input fields
 
 })
 
