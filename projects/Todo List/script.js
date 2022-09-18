@@ -1,3 +1,16 @@
+/*------------Working Process-----------
+
+    1. Select all html class & ID,
+    2. Add EventListener,
+    3. Add Todo,
+    4. Create Element,
+    5. Add Todo in LocalStorage,
+    6. Delete Todo form window & LocalStorage,
+    7. Show all Todo 0n window from LocalStorage.
+
+ */
+
+
 //selector
 const container = document.querySelector('#container');
 const todoForm = document.querySelector('#todoForm');
@@ -60,5 +73,12 @@ const addTodo = (e) => {
     localStorage.setItem("myTodos",JSON.stringify(todos));
 }
 
+//loadTodo
+const loadTodo = () => {
+    const ltodos = localStorageTodos();
+    ltodos.map((item) => createTodo(item.todoId, item.todoValue));
+}
+
 //Add Listener
 todoForm.addEventListener('submit', addTodo);
+window.addEventListener('DOMContentLoaded', loadTodo); //Load previous all localStorage todos on window
