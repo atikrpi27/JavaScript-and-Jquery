@@ -1,5 +1,4 @@
 //selector
-
 const container = document.querySelector('#container');
 const todoForm = document.querySelector('#todoForm');
 const todoInput = document.querySelector('#todoInput');
@@ -10,19 +9,36 @@ const todoList = document.querySelector('#list');
 const createTodo = (todoValue, todoId) => {
     const todoNewRow = document.createElement('tr');
     const todoElement = document.createElement('td');
-    todoElement.id = todoId;
-    console.log(todoElement);
+    todoNewRow.id = todoId;
     todoElement.innerHTML = `
         <div class="d-flex d-row justify-content-between">
             <span>${todoValue}</span>
             <div class="action">
-                <button type="submit" class="btn btn-success">Edit</button>
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-success" id="editBtn">Edit</button>
+                <button type="submit" class="btn btn-danger" id="deleteBtn">Delete</button>
             </div>
         </div>
     `
     todoNewRow.appendChild(todoElement);
     todoList.appendChild(todoNewRow);
+
+    //deleteBtn
+    const deleteBtn = todoElement.querySelector("#deleteBtn");
+    deleteBtn.addEventListener('click', deleleTodo);
+}
+
+//deleteTodo
+const deleleTodo = (e) => {
+    const selectedTodo = e.target.parentElement.parentElement.parentElement.parentElement;
+    todoList.removeChild(selectedTodo);
+    let todos = localStorageTodos();
+    todos = todos.filter((todo) => todo.todoId !== selectedTodo.id);
+    localStorage.setItem("myTodos",JSON.stringify(todos));
+}
+
+//Check localStorage
+const localStorageTodos = () => {
+    return localStorage.getItem("myTodos") ? JSON.parse(localStorage.getItem("myTodos")) : [];
 }
 
 //create addTodo
@@ -32,10 +48,16 @@ const addTodo = (e) => {
 
     //create unique id
     const todoId = Date.now().toString();
-
+    //create Todo
     createTodo(todoValue, todoId);
 
-    todoForm.reset(); //for clear From input filed after submitting
+    //for clear From input filed after submitting
+    todoForm.reset(); 
+
+    //localStorage
+    const todos = localStorageTodos();
+    todos.push({todoId,todoValue});
+    localStorage.setItem("myTodos",JSON.stringify(todos));
 }
 
 //Add Listener

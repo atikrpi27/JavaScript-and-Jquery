@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+.card{
+    font-family: cursive;
+}
+
 .card-title{
     box-shadow: 0 2px 15px -5px #333;
     padding-bottom: 10px;
@@ -49,8 +53,23 @@
     border: 1px solid #e91e63 !important;
 }
 
-/* .action{
-    display: flex;
-    flex-direction: row;
-    flex- s;
-} */
+#list td{
+    border-radius: 8px;
+    transition: .3s;
+}
+
+#list td:hover{
+    background-color: #e7be8d99;
+    color: white;
+    font-weight: bold;
+}
+
+.action button{
+        height: 25px;
+        line-height: 0;
+}
+
+.action button:hover{
+    background: unset !important;
+    color: black !important;
+}
