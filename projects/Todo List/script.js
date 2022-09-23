@@ -74,11 +74,11 @@ const addTodo = (e) => {
 }
 
 //loadTodo
-const loadTodo = () => {
-    const ltodos = localStorageTodos();
-    ltodos.map((item) => createTodo(item.todoId, item.todoValue));
+const loadTodos = () => {
+    const todos = localStorageTodos();
+    todos.map((todo) => createTodo(todo.todoValue, todo.todoId))
 }
-
+ 
 //Add Listener
 todoForm.addEventListener('submit', addTodo);
-window.addEventListener('DOMContentLoaded', loadTodo); //Load previous all localStorage todos on window
+window.addEventListener('DOMContentLoaded', loadTodos); //Load previous all localStorage todos on window

@@ -10,10 +10,8 @@ btn.addEventListener('click', function(e){
     if (name.value == '' || author.value == '' || year.value == '' ){
         alert('Please insert requried data!!');
     }
-
     else{
         const newRow = document.createElement('tr');  //create table row
-        
         const newName = document.createElement('td'); //create table data as a name
         newName.innerHTML = name.value; //insert table data
         newRow.appendChild(newName); //append table data with table row
@@ -28,8 +26,6 @@ btn.addEventListener('click', function(e){
 
         bookList.appendChild(newRow) //append all table row with the main table
     }
-
         document.getElementById('myForm').reset(); //after submit clear all input fields
-
 })
 
