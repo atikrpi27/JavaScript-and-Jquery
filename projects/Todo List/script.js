@@ -38,16 +38,42 @@ const createTodo = (todoValue, todoId) => {
     //deleteBtn
     const deleteBtn = todoElement.querySelector("#deleteBtn");
     deleteBtn.addEventListener('click', deleleTodo);
+
+    //editBtn
+    const editBtn = todoElement.querySelector("#editBtn");
+    editBtn.addEventListener('click', function($todoValue, $todoId){
+        // console.log("clicked");
+        // console.log(todoValue);
+        // console.log(todoId); 
+        let todos = localStorageTodos();
+        // console.log(localtodos);     
+        // console.log(todoId);     
+        // console.log(todoValue);
+        let tdo = todos.filter((todo) => todo.todos == todo.todoId);
+        console.log(tdo);
+    });
 }
+
+//editTodo
+// const editTodo = () => {
+//     console.log("Edit clicked");
+
+//     // console.log(todoValue);
+// }
+
 
 //deleteTodo
 const deleleTodo = (e) => {
     const selectedTodo = e.target.parentElement.parentElement.parentElement.parentElement;
+    // console.log(selectedTodo)
     todoList.removeChild(selectedTodo);
     let todos = localStorageTodos();
+    // console.log(todos)
     todos = todos.filter((todo) => todo.todoId !== selectedTodo.id);
     localStorage.setItem("myTodos",JSON.stringify(todos));
 }
+
+
 
 //Check localStorage
 const localStorageTodos = () => {
