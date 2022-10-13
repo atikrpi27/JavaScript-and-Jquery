@@ -1,0 +1,8 @@
+.carousel-item img{
+    width: 50% !important;
+    height: auto;
+}
+
+.carousel-item{
+    text-align: center;
+}
