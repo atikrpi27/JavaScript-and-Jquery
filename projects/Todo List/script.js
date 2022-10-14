@@ -41,18 +41,25 @@ const createTodo = (todoValue, todoId) => {
 
     //editBtn
     const editBtn = todoElement.querySelector("#editBtn");
-    editBtn.addEventListener('click', function($todoValue, $todoId){
+    editBtn.addEventListener('click', function(e, $todoValue, $todoId){
         // console.log("clicked");
         // console.log(todoValue);
         // console.log(todoId); 
-        let todos = localStorageTodos();
-        // console.log(localtodos);     
+        let todos = localStorageTodos();   
         // console.log(todoId);     
         // console.log(todoValue);
-        let tdo = todos.filter((todo) => todo.todos == todo.todoId);
+        const selectedTodos = e.target.parentElement.parentElement.parentElement.parentElement;
+        // console.log(selectedTodos);
+        let tdo = todos.filter(todo => todo.selectedTodos === todo.$todoId);
         console.log(tdo);
     });
 }
+
+// const myArray = [{id: 1, name:'pipi'}, {id: 2, name:'popo'}];
+// const id = 2;
+
+// const variableOne = myArray.filter(itemInArray => itemInArray.id === id);
+// console.log(variableOne[0].id);
 
 //editTodo
 // const editTodo = () => {
