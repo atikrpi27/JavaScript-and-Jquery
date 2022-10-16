@@ -8,6 +8,10 @@ let suffleQuestions, currentQuestionIndex;
 
 
 startButtoon.addEventListener('click', start);
+nextButtoon.addEventListener('click', () => {
+    currentQuestionIndex++;
+    nextQuestion();
+})
 
 function start() {
     startButtoon.classList.add('hide');
@@ -38,6 +42,7 @@ function showQuestion(question){
 }
 
 function resetState(){
+    clearStatusClass(document.body)
     nextButtoon.classList.add('hide');
     while(answersElementButton.firstChild){
         answersElementButton.removeChild(answersElementButton.firstChild)
@@ -51,6 +56,13 @@ function selectAnswer(e){
     Array.from(answersElementButton.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (suffleQuestions.length > currentQuestionIndex +1){
+        nextButtoon.classList.remove('hide');
+    }
+    else{
+        startButtoon.innerHTML = "Restart";
+        startButtoon.classList.remove('hide');
+    }
 }
 
 function setStatusClass(element, correct){
@@ -77,6 +89,36 @@ const question = [
             {text: '24', correct: false},
             {text: '20', correct: false},
             {text: '12', correct: false},
+        ]
+    },
+
+    {
+        question: 'What is 5 * 2?',
+        answers: [
+            {text: '10', correct: true},
+            {text: '40', correct: false},
+            {text: '20', correct: false},
+            {text: '7', correct: false},
+        ]
+    },
+
+    {
+        question: 'What is 2 / 2?',
+        answers: [
+            {text: '2', correct: false},
+            {text: '5', correct: false},
+            {text: '1', correct: true},
+            {text: '4', correct: false},
+        ]
+    },
+
+    {
+        question: 'What is 5 * 4?',
+        answers: [
+            {text: '40', correct: false},
+            {text: '20', correct: true},
+            {text: '100', correct: false},
+            {text: '9', correct: false},
         ]
     }
 ]
