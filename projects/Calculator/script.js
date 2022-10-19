@@ -37,17 +37,17 @@ class Calculator{
 
         if(isNaN(prev) || isNaN(current)) return
         switch(this.operation){
-            case "+":
+            case '+':
                 computation = prev + current;
                 break;
-            case "-":
+            case '-':
                 computation = prev - current;
                 break;
-            case "*":
+            case '*':
                 computation = prev * current;
                 break;
-            case '/':
-                computation = prev/current;
+            case '÷':
+                computation = prev / current;
                 break;
 
             default:
