@@ -1,10 +1,13 @@
-.container{
+/* .container{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .card{
     width: 880px;
     height: 100vh;
+}
+body{
+    background-color: blueviolet;
 }
