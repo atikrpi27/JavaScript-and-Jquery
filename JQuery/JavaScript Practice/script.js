@@ -154,3 +154,37 @@ numbers.forEach(function myFunction(value) {
   txt += value + "<br>";
 });
 document.write(txt);
+
+/*================= Js Class ==================*/
+document.write("<h1>JS Class: </h1>");
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+var stuName = new Student("Atik", 24);
+document.write(
+  "Your name is: " + stuName.name + ". " + "And age is: " + stuName.age
+);
+document.write("<br>");
+
+class Car {
+  constructor(model, year) {
+    this.model = model;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+var myCar = new Car("Ford", 2010);
+document.write(
+  "Your car name is: " +
+    myCar.model +
+    ", This car is " +
+    myCar.age() +
+    " years old "
+);
+document.write("<br>");
