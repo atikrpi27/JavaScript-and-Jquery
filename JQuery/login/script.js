@@ -19,9 +19,6 @@ btn.addEventListener("click", function (e) {
     }
 })
 
-
-
-
 /*==================== using JQurey =====================*/
 
 $("#loginBtn1").click(function(){

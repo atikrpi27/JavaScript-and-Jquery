@@ -32,4 +32,3 @@ $("ul li:nth-child(2)").hide() //select nth child
 
 $("ul:first li:nth-child(2)").hide() //select first ul and nth child of li
 $("ul:last li:nth-child(2)").hide() //select last ul and nth child of li
-
