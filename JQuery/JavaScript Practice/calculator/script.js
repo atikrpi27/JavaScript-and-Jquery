@@ -1,75 +1,157 @@
-let display = document.querySelector(".display");
-let btn = Array.from(document.querySelectorAll(".button"));
-console.log(btn);
+let currentNum = "";
+let prevNum = "";
+let operator = "";
+let clearOnNextNum = false;
+const numberButtons = document.querySelectorAll(".num-btns");
+const operatorButtons = document.querySelectorAll(".operator");
+const equal = document.querySelector(".equal");
+const dot = document.querySelector(".dot");
+const clearBtn = document.querySelector(".clear");
+const deleteBtn = document.querySelector(".delete");
+const history = document.querySelector(".history");
+const currentDisplay = document.querySelector(".current-number");
+const prevDisplay = document.querySelector(".previous-number");
 
-let history = [];
-console.log("history array is: ", history);
+//add, subtract, multiply, and divide functions
+function addFn(num1, num2) {
+  return num1 + num2;
+}
 
-//display history
-let dis = document.querySelector(".history");
-dis.addEventListener("click", function () {
-    history.map((item) => {
-        document.querySelector(".display").innerHTML =
-            item.operation + "=" + item.result;
-    });
+function subFn(num1, num2) {
+  return num1 - num2;
+}
 
-    if (history.length == 0) {
-        display.innerHTML = "There is no history!";
-        document.querySelector(".history").disabled = true;
+function multiFn(num1, num2) {
+  return num1 * num2;
+}
+
+function divFn(num1, num2) {
+  return num1 / num2;
+}
+
+//result array
+let res = [];
+console.log(res);
+
+
+//history
+history.addEventListener("click", function(){
+    // alert("adfasd")
+    currentDisplay.innerHTML = "All results are: <br/>" + res;
+
+    if (res.length == 0) {
+        currentDisplay.innerHTML = "There is no history!";
+        // document.querySelector(".history").disabled = true;
+        history.disabled = true;
     }
-});
+})
 
-btn.map((btn) => {
-    btn.addEventListener("click", (e) => {
-        let result = [];
-        console.log("Result array is: ", result);
+//operator function
+function operate(a, b, c) {
+  const num1 = parseFloat(a);
+  const num2 = parseFloat(b);
+  let output = 0;
+  try {
+    switch (c) {
+      case "+":
+        output = addFn(num1, num2);
+        break;
 
-        switch (e.target.innerText) {
-            case "AC":
-                display.innerText = "";
-                // console.log("After press AC button array is", result)
-                result = [];
-                console.log("result ac", result)
-                history.length = 0;
-                console.log("AC:", history);
-                break;
+      case "*":
+        output = multiFn(num1, num2);
+        break;
 
-            case "DEL":
-                display.innerHTML = display.innerHTML.slice(0, -1);
-                break;
+      case "-":
+        output = subFn(num1, num2);
+        break;
 
-            case "=":
-                if (display.innerHTML != "") {
-                    try {
-                        var fullOperation = display.innerHTML; //like 9+6
-                        // console.log(fullOperation)
-
-                        result.push(eval(display.innerHTML));
-
-                        document.querySelector(".display").innerHTML = result[0];
-
-                        //create obj
-                        let obj = {
-                            operation: fullOperation,
-                            result: display.innerHTML,
-                        };
-
-
-                        history.push(obj);
-                        console.log("obj is ", obj);
-
-                        document.querySelector(".history").disabled = false; //enable History button
-                    }
-
-                    catch {
-                        display.innerHTML = "Error!";
-                    }
-                    console.log("Array is: ", result);
-                }
-                break;
-
-            default:
-                display.innerText += e.target.innerText;
+      case "/":
+        if (num2 === 0) {
+          output = "ERROR";
+        } else {
+          output = divFn(num1, num2);
         }
-    });
+        break;
+    }
+  } 
+  catch (e) {
+    currentDisplay.textContent = ("There's an error: ", e);
+  }
+
+  res.push(currentDisplay.textContent = Math.round(output * 100000) / 100000);
+  prevDisplay.innerHTML=" ";
+  currentNum = output;
+  clearOnNextNum = true;
+  history.disabled = false;
+}
+
+equal.addEventListener("click", (e) => {
+  if (currentNum != "" && prevNum != "") {
+    operate(prevNum, currentNum, operator);
+  }
+  prevNum = " ";
 });
+
+//button inputs for numbers and operators
+numberButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    handleNumber(e.target.textContent);
+  });
+});
+
+function handleNumber(number) {
+  if (clearOnNextNum) {
+    clearOnNextNum = false;
+    currentNum = " ";
+  }
+  currentNum += number;
+  currentDisplay.textContent = currentNum;
+}
+
+operatorButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    handleOperator(e.target.textContent);
+  });
+});
+
+function handleOperator(op) {
+  clearOnNextNum = false;
+  if (currentNum != "") {
+    operator = op;
+    prevNum = currentNum;
+    prevDisplay.textContent = prevNum + "" + operator;
+    currentNum = " ";
+    currentDisplay.textContent = " ";
+  }
+}
+
+function addDot() {
+  clearOnNextNum = false;
+  if (!currentNum.includes(".")) {
+    currentNum += ".";
+    currentDisplay.textContent = currentNum;
+  }
+}
+
+dot.addEventListener("click", () => {
+  addDot();
+});
+
+//clear button
+clearBtn.addEventListener("click", function() {
+    currentDisplay.textContent = "";
+    prevDisplay.textContent = "";
+    currentNum = "";
+    prevNum = "";
+    res.length=0;
+  });
+
+//delete button
+function delNumber() {
+  currentDisplay.textContent = currentDisplay.textContent
+    .toString()
+    .slice(0, -1);
+  currentNum = currentDisplay.textContent;
+}
+
+deleteBtn.addEventListener("click", delNumber);
