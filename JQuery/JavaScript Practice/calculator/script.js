@@ -1,7 +1,7 @@
 let currentNum = "";
 let prevNum = "";
 let operator = "";
-let clearOnNextNum = false;
+let nextCal = false;
 const numberButtons = document.querySelectorAll(".num-btns");
 const operatorButtons = document.querySelectorAll(".operator");
 const equal = document.querySelector(".equal");
@@ -29,30 +29,13 @@ function divFn(num1, num2) {
   return num1 / num2;
 }
 
-//result array
-let res = [];
-console.log(res);
-
-
-//history
-history.addEventListener("click", function(){
-    // alert("adfasd")
-    currentDisplay.innerHTML = "All results are: <br/>" + res;
-
-    if (res.length == 0) {
-        currentDisplay.innerHTML = "There is no history!";
-        // document.querySelector(".history").disabled = true;
-        history.disabled = true;
-    }
-})
-
 //operator function
-function operate(a, b, c) {
-  const num1 = parseFloat(a);
-  const num2 = parseFloat(b);
+function operate(number1, number2, selectOperator) {
+  const num1 = parseFloat(number1);
+  const num2 = parseFloat(number2);
   let output = 0;
   try {
-    switch (c) {
+    switch (selectOperator) {
       case "+":
         output = addFn(num1, num2);
         break;
@@ -66,22 +49,23 @@ function operate(a, b, c) {
         break;
 
       case "/":
-        if (num2 === 0) {
-          output = "ERROR";
+        if (num2 == 0) {
+          output = "Infinity";
         } else {
           output = divFn(num1, num2);
         }
         break;
     }
-  } 
+  }
   catch (e) {
     currentDisplay.textContent = ("There's an error: ", e);
   }
 
   res.push(currentDisplay.textContent = Math.round(output * 100000) / 100000);
-  prevDisplay.innerHTML=" ";
+  prevDisplay.innerHTML = " ";
   currentNum = output;
-  clearOnNextNum = true;
+  // console.log(currentNum);
+  nextCal = true;
   history.disabled = false;
 }
 
@@ -92,6 +76,22 @@ equal.addEventListener("click", (e) => {
   prevNum = " ";
 });
 
+//result array
+let res = [];
+// console.log(res);
+
+//history button
+history.addEventListener("click", function () {
+  // alert("adfasd")
+  currentDisplay.innerHTML = "All results are: <br/>" + res;
+
+  if (res.length == 0) {
+    currentDisplay.innerHTML = "There is no history!";
+    // document.querySelector(".history").disabled = true;
+    history.disabled = true;
+  }
+})
+
 //button inputs for numbers and operators
 numberButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -100,11 +100,12 @@ numberButtons.forEach((btn) => {
 });
 
 function handleNumber(number) {
-  if (clearOnNextNum) {
-    clearOnNextNum = false;
+  if (nextCal) {
+    nextCal = false;
     currentNum = " ";
   }
   currentNum += number;
+  // console.log(currentNum);
   currentDisplay.textContent = currentNum;
 }
 
@@ -115,7 +116,7 @@ operatorButtons.forEach((btn) => {
 });
 
 function handleOperator(op) {
-  clearOnNextNum = false;
+  nextCal = false;
   if (currentNum != "") {
     operator = op;
     prevNum = currentNum;
@@ -125,33 +126,26 @@ function handleOperator(op) {
   }
 }
 
-function addDot() {
-  clearOnNextNum = false;
+//dot button
+dot.addEventListener("click", function () {
+  nextCal = false;
   if (!currentNum.includes(".")) {
     currentNum += ".";
     currentDisplay.textContent = currentNum;
   }
-}
-
-dot.addEventListener("click", () => {
-  addDot();
 });
 
 //clear button
-clearBtn.addEventListener("click", function() {
-    currentDisplay.textContent = "";
-    prevDisplay.textContent = "";
-    currentNum = "";
-    prevNum = "";
-    res.length=0;
-  });
+clearBtn.addEventListener("click", function () {
+  currentDisplay.textContent = "";
+  prevDisplay.textContent = "";
+  currentNum = "";
+  prevNum = "";
+  res.length = 0;
+});
 
 //delete button
-function delNumber() {
-  currentDisplay.textContent = currentDisplay.textContent
-    .toString()
-    .slice(0, -1);
+deleteBtn.addEventListener("click", function () {
+  currentDisplay.textContent = currentDisplay.textContent.slice(0, -1);
   currentNum = currentDisplay.textContent;
-}
-
-deleteBtn.addEventListener("click", delNumber);
+});
