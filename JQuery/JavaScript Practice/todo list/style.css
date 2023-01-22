@@ -44,14 +44,14 @@ ul {
 
 li {
 	list-style: none;
-	width: 65%;
+	width: 100%;
     padding: 10px 20px;
 	color: #004652;
 	text-transform: capitalize;
 	font-weight: 600;
 	border: 2px solid #025f70;
 	border-radius: 5px;
-    margin-left: -45px;
+    margin-left: -40px;
 	margin-bottom: 10px;
 	background: #4EB9CD;
 	transition: all 0.75s ease;
@@ -79,4 +79,14 @@ input {
 
 input:focus{
     outline: none;
+}
+
+.action button{
+	height: 25px;
+	line-height: 0;
+}
+
+.action button:hover{
+background: unset !important;
+color: black !important;
 }
