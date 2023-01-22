@@ -13,6 +13,7 @@ enter.addEventListener('click', function () {
 
 function createElement() {
     var list = document.createElement('li');        // Create new List
+    inputText = input.value;
 
     // Create Edit, Delete Button and put input field value in list variable
     list.innerHTML = `                             
@@ -26,14 +27,26 @@ function createElement() {
         `
 
     ul.appendChild(list)                            // Append List in UnOrderList
-    input.value = "";                                // Reset input field
+    input.value = "";                               // Reset input field
+
+
+    //Edit function
+    var editBtn = list.querySelector('#editBtn')
+    editBtn.addEventListener('click', function(){
+    input.value =  inputText;
+    // console.log(input.value)
+
+    const parent = editBtn.parentElement.parentElement.parentElement;   //edit todo
+    parent.parentElement.removeChild(parent);
+    // console.log(parent)
+    })
 
     //Delete function
     var deleteBtn = list.querySelector('#deleteBtn');
     deleteBtn.addEventListener('click', deleteTodo)
 }
 
-function deleteTodo(e){
+function deleteTodo(e){                             // Delete todo
     var selectTodo = e.target.parentElement.parentElement.parentElement
     // console.log(selectTodo)
     ul.removeChild(selectTodo)
