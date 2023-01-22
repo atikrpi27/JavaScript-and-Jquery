@@ -28,5 +28,13 @@ function createElement() {
     ul.appendChild(list)                            // Append List in UnOrderList
     input.value = "";                                // Reset input field
 
+    //Delete function
+    var deleteBtn = list.querySelector('#deleteBtn');
+    deleteBtn.addEventListener('click', deleteTodo)
 }
 
+function deleteTodo(e){
+    var selectTodo = e.target.parentElement.parentElement.parentElement
+    // console.log(selectTodo)
+    ul.removeChild(selectTodo)
+}
