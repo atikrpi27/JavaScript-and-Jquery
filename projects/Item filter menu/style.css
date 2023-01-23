@@ -1,0 +1,14 @@
+.card {
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  border: none;
+  margin-bottom: 30px;
+}
+
+.card-01 .card-body {
+  position: relative;
+}
+
+.card-01 .height-fix {
+  height: 455px;
+  overflow: hidden;
+}
