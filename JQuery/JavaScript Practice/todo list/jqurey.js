@@ -31,7 +31,7 @@ $(document).ready(function () {
         })
 
         // Edit Function
-        $('.editBtn').click(function () {
+        $('.editBtn').click(function (e) {
             let editParent = $(this).parent().parent().find('span');
             let oldValue = editParent.text();
             editParent.html('<input id="uInput" type="text" placeholder="Edit Item..." />')
@@ -39,8 +39,10 @@ $(document).ready(function () {
             $(this).removeClass('editBtn').addClass('saveBtn');
             let uInput = $('#uInput').val(oldValue);
 
-        $('.saveBtn').click(function () {
+        $('.saveBtn').click(function (e) {
             let newValue = uInput.val();
+            // let newValue = uInput.val("gyhg");
+            console.log(newValue)
             editParent.html(`<span>${newValue}</span>`)
             $(this).html('Edit')
             $(this).removeClass('saveBtn').addClass('editBtn');
@@ -48,8 +50,6 @@ $(document).ready(function () {
 
         })
 
-
     })
-
 
 });
