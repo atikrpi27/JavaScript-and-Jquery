@@ -1,12 +1,43 @@
+body{
+    background-color: #ff3f4d;
+}
+.home-demo {
+    position: relative;
+}
 .home-demo .item {
     background: #ff3f4d;
 }
 .home-demo img {
+    height: 400px;
     color: #FFF;
     text-align: center;
-    /* padding: 6rem 0; */
     margin: 0;
     font-style: italic;
     font-weight: 300;
-    height: 150px;
+    height: 200px;
+    
+}
+.owl-theme{
+    position: relative;
+}
+.owl-control{
+    position: absolute;
+    top: 45%;
+    z-index: 1;
+    cursor: pointer;
+}
+.owl-control i{
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.736);
+}
+.owl-control i:hover{
+    color: #FFF;
+}
+.owl-control .left{
+    position: fixed;
+    left: 40px;
+}
+.owl-control .right{
+    position: fixed;
+    right: 40px;
 }
