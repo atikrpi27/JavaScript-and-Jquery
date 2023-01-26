@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Mono";
+    font-size: 18px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+#home {
+    background-color: royalblue;
+}
+
+#about {
+    background-color: aquamarine;
+}
+
+#footer {
+    background-color: crimson;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+nav .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    margin-bottom: 0px !important;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: black;
+}
+
+.active {
+    background-color: crimson;
+    transition: 0.3s ease background-color;
+    border-radius: 5px;
+}
+
+nav ul li.active a {
+    color: rgb(255, 255, 255);
+}

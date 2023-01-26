@@ -7,7 +7,7 @@ $(function () {
         items: 4,
         loop: true,
         margin: 10,
-        autoplay:true,
+        autoplay: true,
         autoplayTimeout: 2000,
         // nav : true,
         // dots : false,
@@ -38,4 +38,3 @@ function showSlides(n) {
 
     slides[slideIndex - 1].style.display = "block";
 }
-
