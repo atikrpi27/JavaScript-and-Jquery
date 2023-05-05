@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+ box-sizing: border-box;
+}
+.container{
+    width: 100%;
+}
+.dpForm{
+    width: 350px;
+    height: 150px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+.dpForm .form-group label{
+    color: #ffff;
+}
+.dpForm .form-group input{
+    text-align: center;
+}
+.dpForm .form-group input:focus{
+    outline: none;
+}
+.dpForm .form-group button{
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 1.4;
+}
