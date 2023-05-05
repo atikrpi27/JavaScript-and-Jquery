@@ -16,6 +16,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--============= JQuery UI CDN =============-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--============= Main JS =============-->
+    <script src="script.js"></script>
     <!--============= Main CSS =============-->
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -36,24 +38,7 @@
                 </div>
             </form>
         </div>
-    </div>
-
-    <script>
-        $(document).ready(function(){
-            $(function(){
-                $('#datePicker').datepicker();
-            })
-
-            $('.btn-submit').click(function(){
-                let inputValue = $('#datePicker').val();
-                console.log(inputValue);
-                $('.output').html("Your Selected date is " + "<b style='color:black'>" + inputValue + "</b>" + "<br>") 
-            })
-           
-        })
-    </script>
-
-    
+    </div>    
 </body>
 
 </html>
