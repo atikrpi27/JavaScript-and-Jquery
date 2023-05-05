@@ -18,7 +18,8 @@ body{
     display: flex;
     justify-content: center;
 }
-.dpForm .form-group label{
+.dpForm .form-group label,
+.dpForm .form-group span{
     color: #ffff;
 }
 .dpForm .form-group input{
@@ -27,7 +28,7 @@ body{
 .dpForm .form-group input:focus{
     outline: none;
 }
-.dpForm .form-group button{
+.dpForm .form-group a{
     width: 70px;
     height: 30px;
     font-size: 12px;
