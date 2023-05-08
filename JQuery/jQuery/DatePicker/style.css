@@ -1,14 +1,17 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-body{
- box-sizing: border-box;
+
+body {
+    box-sizing: border-box;
 }
-.container{
+
+.container {
     width: 100%;
 }
-.dpForm{
+
+.dpForm {
     width: 350px;
     height: 150px;
     background-color: cadetblue;
@@ -18,19 +21,42 @@ body{
     display: flex;
     justify-content: center;
 }
-.dpForm .form-group label,
-.dpForm .form-group span{
+
+.dpForm1 {
+    width: 350px;
+    height: 190px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.dpForm .form-group label {
     color: #ffff;
 }
-.dpForm .form-group input{
+
+.dpForm .form-group input {
     text-align: center;
 }
-.dpForm .form-group input:focus{
+
+.dpForm .form-group input:focus,
+.dpForm1 .form-group-1 input:focus {
     outline: none;
 }
-.dpForm .form-group a{
+
+.dpForm .form-group a,
+.dpForm1 .form-group-1 a {
     width: 70px;
     height: 30px;
     font-size: 12px;
     line-height: 1.4;
+}
+
+.dpForm1 .form-group-1 a {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
