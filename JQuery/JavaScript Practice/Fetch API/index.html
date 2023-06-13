@@ -10,15 +10,6 @@
     <button id="btn">Fetch Data</button>
     <p id="show"></p>
 
-    <script>
-        const btn = document.querySelector('#btn');
-        const display = document.querySelector("#show");
-
-        fetch('https://jsonplaceholder.typicode.com/todos')
-            .then(res => res.text())
-            .then(data => {
-                display.innerText = data;
-            })
-    </script>
+    <script src="scrpt.js"></script>
 </body>
 </html>
