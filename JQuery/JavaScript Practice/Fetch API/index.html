@@ -11,9 +11,14 @@
     <p id="show"></p>
 
     <script>
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
+        const btn = document.querySelector('#btn');
+        const display = document.querySelector("#show");
+
+        fetch('https://jsonplaceholder.typicode.com/todos')
             .then(res => res.text())
-            .then(data => console.log(data))
+            .then(data => {
+                display.innerText = data;
+            })
     </script>
 </body>
 </html>
