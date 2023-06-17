@@ -10,14 +10,22 @@
 
 <body>
     <div>
-        <p style="color: green;">dsjafkjasdklj</p>
+        <h3>Check on Console Log</h3>
     </div>
     <script type="text/javascript">
 	    function square(x) {
 	        console.log(`Square of ${x}: ${x * x}`)
 	    }
+
 	    square(25);
+
+	    function higherOrderFunction(num, callbackFunction) {
+	        callbackFunction(num);
+    }
+
+    higherOrderFunction(5, square)
     </script>
+    <script src="higherOrderFunction.js"></script>
 </body>
 
 </html>
