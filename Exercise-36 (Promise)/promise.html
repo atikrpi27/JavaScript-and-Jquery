@@ -15,14 +15,17 @@
                 resolve("This is task 1. It's already completed");
             });
         }
-        const taskTwo = () => {
-            return new Promise((resolve,  reject) => {
-                resolve("This is task 2. It's already completed");
-            });
-        }
         const taskThree = () => {
             return new Promise((resolve,  reject) => {
-                resolve("This is task 3. It's already completed");
+                // resolve("This is task 3. It's already completed");
+                reject("Error: Something Wrong! Task 3 can't be completed.")
+            });
+        }
+        const taskTwo = () => {
+            return new Promise((resolve,  reject) => {
+                setTimeout(() => {
+                    resolve("This is task 2. It's already completed");
+                },2000)
             });
         }
         const taskFour = () => {
@@ -53,6 +56,10 @@
             .then((info) => {
                 alert(info);
                 console.log(info);
+            })
+            .catch((err) => {
+                alert(err);
+                console.log(err);
             })
 
         console.log("Bye!");
