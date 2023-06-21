@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Chaining</title>
+</head>
+<body>
+    
+
+
+    <script>
+        const taskOne = () => {
+            return new Promise((resolve,  reject) => {
+                resolve("This is task 1. It's already completed");
+            });
+        }
+        const taskTwo = () => {
+            return new Promise((resolve,  reject) => {
+                resolve("This is task 2. It's already completed");
+            });
+        }
+        const taskThree = () => {
+            return new Promise((resolve,  reject) => {
+                resolve("This is task 3. It's already completed");
+            });
+        }
+        const taskFour = () => {
+            return new Promise((resolve,  reject) => {
+                resolve("This is task 4. It's already completed");
+            });
+        }
+
+
+        console.log('Welcome!')
+        //calling promise chaining
+        taskOne()
+            .then((res) => {
+                alert(res);
+                console.log(res);
+            })
+            .then(taskTwo)
+            .then((msz) => {
+                alert(msz);
+                console.log(msz);
+            })
+            .then(taskThree)
+            .then((output) => {
+                alert(output);
+                console.log(output);
+            })
+            .then(taskFour)
+            .then((info) => {
+                alert(info);
+                console.log(info);
+            })
+
+        console.log("Bye!");
+    </script>
+</body>
+</html>
